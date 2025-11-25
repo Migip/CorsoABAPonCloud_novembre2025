@@ -1,0 +1,30 @@
+@Metadata.layer: #CORE
+annotate view ZC_BIGLIETTO_GF
+    with 
+{
+    @UI.selectionField: [{
+        position: 10
+    }]
+    @UI.lineItem: [{ 
+        position: 10
+     }]
+    IdBiglietto;
+    
+    
+    @UI.selectionField: [{
+        position: 20
+    }]
+    @UI.lineItem: [{ 
+        position: 20
+     }]
+    ModificatoDa;
+    
+    @UI.selectionField: [{
+        position: 30
+    }]
+    @UI.lineItem: [{ 
+        position: 30
+     }]
+    ModificatoA;
+    
+}

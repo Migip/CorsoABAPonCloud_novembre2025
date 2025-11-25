@@ -2,25 +2,25 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Biglietti'
 @Metadata.ignorePropagatedAnnotations: true
-define root view entity ZR_BIGLIETTO_GF
-  as select from ZI_BIGLIETTO_GF as Biglietto
+define root view entity ZI_BIGLIETTO_GF
+  as select from zbiglietto_gf as Biglietto
 {
-  key Biglietto.IdBiglietto,
+  key Biglietto.id_biglietto  as IdBiglietto,
       @Semantics.user.createdBy: true
-      Biglietto.CreatoDa,
+      Biglietto.creato_da     as CreatoDa,
       @Semantics: {
         systemDateTime: {
             createdAt: true
         }
       }
-      Biglietto.CreatoA,
+      Biglietto.creato_a      as CreatoA,
       @Semantics.user.lastChangedBy: true
-      Biglietto.ModificatoDa,
+      Biglietto.modificato_da as ModificatoDa,
       @Semantics.systemDateTime: {
             lastChangedAt: true
         }
-      Biglietto.ModificatoA,
-      case when CreatoA = ModificatoA
+      Biglietto.modificato_a  as ModificatoA,
+      case when $projection.CreatoA = $projection.ModificatoA
         then ' '
         else 'X'
       end                     as Modificato
