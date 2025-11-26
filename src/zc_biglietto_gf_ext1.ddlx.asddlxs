@@ -1,30 +1,56 @@
 @Metadata.layer: #CORE
-annotate view ZC_BIGLIETTO_GF
-    with 
+@UI.headerInfo: {
+    typeName: 'Biglietto',
+    typeNamePlural: 'Biglietti',
+    title: {
+        type: #STANDARD,
+        value: 'IdBiglietto'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'ModificatoDa'
+    }
+}
+annotate view ZC_BIGLIETTO_GF with
 {
-    @UI.selectionField: [{
-        position: 10
-    }]
-    @UI.lineItem: [{ 
-        position: 10
-     }]
-    IdBiglietto;
-    
-    
-    @UI.selectionField: [{
-        position: 20
-    }]
-    @UI.lineItem: [{ 
-        position: 20
-     }]
-    ModificatoDa;
-    
-    @UI.selectionField: [{
-        position: 30
-    }]
-    @UI.lineItem: [{ 
-        position: 30
-     }]
-    ModificatoA;
-    
+  @EndUserText.label: 'Id biglietto'
+  @UI.facet: [ {
+      label: 'General Information',
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      position: 10 ,
+      type: #IDENTIFICATION_REFERENCE
+  }]
+  @UI.selectionField: [{
+      position: 10
+  }]
+  @UI.lineItem: [{
+      position: 10
+   }]
+  @UI.identification: [{
+   position: 10 }]
+  IdBiglietto;
+
+
+  @UI.selectionField: [{
+      position: 20
+  }]
+  @UI.lineItem: [{
+      position: 20
+   }]
+  ModificatoDa;
+
+  @UI.selectionField: [{
+      position: 30
+  }]
+  @UI.lineItem: [{
+      position: 30
+   }]
+  ModificatoA;
+
+  @UI.hidden: true
+  @UI.lineItem: [{
+      position: 40 }]
+  CreatoA;
+
 }

@@ -10,8 +10,9 @@ etag master ModificatoA
   create ( authorization : global );
   update;
   delete;
-  field ( readonly ) IdBiglietto;
-  //field ( readonly: update ) IdBiglietto;
+//  field ( readonly ) IdBiglietto;
+  field ( mandatory: create ) IdBiglietto;
+  field ( readonly: update ) IdBiglietto;
 
   mapping for zbiglietto_gf
     {
